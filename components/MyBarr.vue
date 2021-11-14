@@ -8,6 +8,9 @@
     <v-btn text rounded :to="{name: 'login'}">
       Login
     </v-btn>
+    <v-btn text rounded :to="{name: 'dashboard'}">
+      Dashboard
+    </v-btn>
   </v-app-bar>
 </template>
 

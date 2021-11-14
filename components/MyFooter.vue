@@ -10,13 +10,14 @@
     >
       <v-btn
         v-for="link in links"
-        :key="link"
+        :key="link.name"
         color="white"
         text
         rounded
         class="my-2"
+        :to="link.page"
       >
-        {{ link }}
+        {{ link.name }}
       </v-btn>
       <v-col
         class="primary lighten-2 py-4 text-center white--text"
@@ -33,7 +34,10 @@ export default {
   name: 'my-footer',
   data () {
     return {
-      links: ['Home', 'Login']
+      links: [
+        { name: 'Home', page: '/' },
+        { name: 'Login', page: { name: 'login' } }
+      ]
     }
   }
 }
