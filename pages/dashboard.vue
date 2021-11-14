@@ -7,12 +7,26 @@
           :items="desserts"
           :items-per-page="5"
           class="elevation-1"
+          @click:row="clickByRow"
         />
       </v-col>
       <v-col cols="4">
         <event-timeline :timeline="timeline" />
       </v-col>
     </v-row>
+    <v-snackbar v-model="snackbar">
+      {{ rowName }}
+      <template #action="{ attrs }">
+        <v-btn
+          color="pink"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -27,6 +41,8 @@ export default {
   },
   data () {
     return {
+      rowName: '',
+      snackbar: false,
       timeline: timelineData,
       headers: [
         {
@@ -123,6 +139,12 @@ export default {
           iron: '6%'
         }
       ]
+    }
+  },
+  methods: {
+    clickByRow (item) {
+      this.rowName = item.name
+      this.snackbar = true
     }
   }
 }
