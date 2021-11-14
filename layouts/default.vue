@@ -1,15 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-toolbar-title>Vuetify dushboard</v-toolbar-title>
-      <v-spacer />
-      <v-btn text rounded>
-        Home
-      </v-btn>
-      <v-btn text rounded>
-        Login
-      </v-btn>
-    </v-app-bar>
+    <my-barr />
     <v-main>
       <nuxt />
     </v-main>
@@ -19,13 +10,12 @@
 
 <script>
 import MyFooter from '~/components/MyFooter'
+import MyBarr from '@/components/MyBarr'
 
 export default {
   components: {
+    MyBarr,
     MyFooter
   },
-  data () {
-    return {}
-  }
 }
 </script>
