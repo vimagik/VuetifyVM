@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col>
+      <v-col cols="8">
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -9,15 +9,25 @@
           class="elevation-1"
         ></v-data-table>
       </v-col>
+      <v-col>
+        <EventTimeline :timeline="timeline" />
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import timelineData from '../data/timeline.json'
+import EventTimeline from '@/components/EventTimeline';
+
 export default {
   name: 'dashboard',
-  data () {
+  components: [
+    EventTimeline
+  ],
+  data() {
     return {
+      timeline: timelineData,
       headers: [
         {
           text: 'Dessert (100g serving)',

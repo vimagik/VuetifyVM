@@ -1,5 +1,5 @@
 <template>
-  <v-card width="400" class="mx-auto mt-5">
+  <v-card width="350" class="mx-auto mt-5">
     <v-card-title>
       <h1 class="display-1">
         Login
