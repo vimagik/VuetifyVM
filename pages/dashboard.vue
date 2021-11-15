@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="8">
+      <v-col cols="12" sm="6" md="8">
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -10,11 +10,11 @@
           @click:row="clickByRow"
         />
       </v-col>
-      <v-col cols="4">
+      <v-col cols="12" sm="6" md="4">
         <event-timeline :timeline="timeline" />
       </v-col>
     </v-row>
-    <v-snackbar v-model="snackbar">
+    <v-snackbar v-model="snackbar" :left="$vuetify.breakpoint.lgAndUp">
       {{ rowName }}
       <template #action="{ attrs }">
         <v-btn
