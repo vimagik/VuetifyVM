@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <my-barr />
+    <my-barr :links="links" />
     <v-main>
       <nuxt />
     </v-main>
-    <my-footer />
+    <my-footer :links="links" />
   </v-app>
 </template>
 
@@ -16,6 +16,16 @@ export default {
   components: {
     MyBarr,
     MyFooter
+  },
+  data () {
+    return {
+      links: [
+        { name: 'Home', page: '/' },
+        { name: 'Login', page: { name: 'login' } },
+        { name: 'Dashboard', page: { name: 'dashboard' } },
+        { name: 'Form', page: { name: 'form' } }
+      ]
+    }
   }
 }
 </script>

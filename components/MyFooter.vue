@@ -32,12 +32,10 @@
 <script>
 export default {
   name: 'Myfooter',
-  data () {
-    return {
-      links: [
-        { name: 'Home', page: '/' },
-        { name: 'Login', page: { name: 'login' } }
-      ]
+  props: {
+    links: {
+      type: Array,
+      required: true
     }
   }
 }
